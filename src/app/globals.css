@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --chocolate: #3b2a22;
+  --mocha: #6f5747;
+  --warm-nude: #d8c2b0;
+  --cream: #f7f3ef;
+  --aubergine: #5a3045;
+  --soft-gold: #b89b72;
+  --background: var(--cream);
+  --foreground: var(--chocolate);
+}
+
+@theme inline {
+  --color-chocolate: var(--chocolate);
+  --color-mocha: var(--mocha);
+  --color-warm-nude: var(--warm-nude);
+  --color-cream: var(--cream);
+  --color-aubergine: var(--aubergine);
+  --color-soft-gold: var(--soft-gold);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --font-script: var(--font-caveat);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+  background-color: var(--cream);
+  overflow-x: clip;
+}
+
+@media (max-width: 479px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 19px;
+  }
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+  max-width: 100vw;
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(
+      ellipse 130% 85% at 12% -5%,
+      rgba(184, 155, 114, 0.04),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 115% 80% at 88% 105%,
+      rgba(111, 87, 71, 0.035),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse 90% 70% at 50% 42%,
+      rgba(216, 194, 176, 0.028),
+      transparent 68%
+    );
+  background-attachment: fixed;
+  color: var(--chocolate);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.032;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 220px 220px;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.018;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(59, 42, 34, 0.06) 0,
+      rgba(59, 42, 34, 0.06) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(111, 87, 71, 0.04) 0,
+      rgba(111, 87, 71, 0.04) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+@media print {
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  body {
+    background-image: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
