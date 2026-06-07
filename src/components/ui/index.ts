@@ -1,3 +1,12 @@
+export {
+  BrandMonogram,
+  BrandMonogramCorner,
+  BrandMonogramWatermark,
+  brandCardHoverClasses,
+  brandMonogramCornerPosition,
+  brandMonogramCardClasses,
+} from "./BrandMonogram";
+export { BrandWatermark } from "./BrandWatermark";
 export { AnimatedSection } from "./AnimatedSection";
 export { AnimatedItem, AnimatedStagger } from "./AnimatedStagger";
 export { AudienceCard } from "./AudienceCard";

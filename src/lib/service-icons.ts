@@ -37,3 +37,25 @@ const whoWeServeIconMap: Record<string, LucideIcon> = {
 export function getWhoWeServeIcon(title: string): LucideIcon {
   return whoWeServeIconMap[title] ?? Compass;
 }
+
+const workshopApproachIconMap: Record<string, LucideIcon> = {
+  "Strategic Workshop Design": Compass,
+  "Leadership Development": Users,
+  "Facilitation Expertise": Mic,
+  "Action-Oriented Experiences": TrendingUp,
+  "Executive Engagement": UserRound,
+};
+
+export function getWorkshopApproachIcon(title: string): LucideIcon {
+  return workshopApproachIconMap[title] ?? Compass;
+}
+
+const speakingTopicIconMap: Record<string, LucideIcon> = {
+  "Career & Performance": TrendingUp,
+  "Leadership & Culture": Users,
+  "Communication & Facilitation": Mic,
+};
+
+export function getSpeakingTopicIcon(cluster: string): LucideIcon {
+  return speakingTopicIconMap[cluster] ?? Mic;
+}

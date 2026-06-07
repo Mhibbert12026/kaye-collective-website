@@ -11,7 +11,7 @@ export function ExperienceSection() {
   const [featured] = caseStudies;
 
   return (
-    <SectionWrapper id="experience" variant="cream">
+    <SectionWrapper id="experience" variant="white" afterTransition>
       <div className="max-w-2xl">
         <SectionLabel>{experienceContent.label}</SectionLabel>
         <SectionHeading size="large" accent={false}>

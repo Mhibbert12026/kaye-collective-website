@@ -2,14 +2,14 @@ import { trustedByContent, trustedByLogos } from "@/lib/constants";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { SectionHeadingAccent } from "@/components/ui/SectionHeadingAccent";
 import { TrustedByLogoGrid } from "@/components/ui/TrustedByLogoGrid";
-import { siteContainerWide, sectionPaddingY, sectionContentGap } from "@/lib/layout";
+import { siteContainerWide, sectionPaddingYAfterTransition, sectionContentGap } from "@/lib/layout";
 import { scrollSection } from "@/lib/motion";
 
 export function TrustedBySection() {
   return (
     <section
       aria-labelledby="trusted-by-heading"
-      className={`bg-white ${sectionPaddingY}`}
+      className={`bg-white ${sectionPaddingYAfterTransition}`}
     >
       <div className={siteContainerWide}>
         <AnimatedSection variant="scrollEnter" duration={scrollSection.duration}>

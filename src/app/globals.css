@@ -5,6 +5,8 @@
   --mocha: #6f5747;
   --warm-nude: #d8c2b0;
   --cream: #f7f3ef;
+  --warm-ivory: #faf7f2;
+  --soft-beige: #f2ebe3;
   --aubergine: #5a3045;
   --soft-gold: #b89b72;
   --background: var(--cream);
@@ -16,6 +18,8 @@
   --color-mocha: var(--mocha);
   --color-warm-nude: var(--warm-nude);
   --color-cream: var(--cream);
+  --color-warm-ivory: var(--warm-ivory);
+  --color-soft-beige: var(--soft-beige);
   --color-aubergine: var(--aubergine);
   --color-soft-gold: var(--soft-gold);
   --color-background: var(--background);

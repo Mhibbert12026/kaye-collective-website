@@ -14,7 +14,7 @@ export const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Experience", href: "/experience" },
   { label: "Founder", href: "/founder" },
-  { label: "Speaking", href: "/#speaking" },
+  { label: "Speaking", href: "/speaking" },
 ];
 
 export const heroContent = {
@@ -249,11 +249,15 @@ export const speakingContent = {
   description:
     "Keynotes and facilitation that engage, empower, and feel like conversation with an old friend.",
   featuredTopics: ["Radical Candor", "Inclusive Leadership", "Personal Branding"],
+  topicsIntro:
+    "Jennifer delivers keynotes, workshops, leadership experiences, and facilitated discussions designed to create awareness, inspire action, and drive meaningful organizational change.",
 };
 
 export const speakingTopics = [
   {
     cluster: "Career & Performance",
+    description:
+      "Helping professionals navigate growth, advancement, and long-term success.",
     topics: [
       "Career Navigation & Winning Behaviors",
       "Mid-Career Acceleration",
@@ -265,6 +269,8 @@ export const speakingTopics = [
   },
   {
     cluster: "Leadership & Culture",
+    description:
+      "Building inclusive, accountable, high-performing teams.",
     topics: [
       "Inclusive Leadership",
       "Allyship",
@@ -276,6 +282,8 @@ export const speakingTopics = [
   },
   {
     cluster: "Communication & Facilitation",
+    description:
+      "Creating meaningful dialogue that inspires action.",
     topics: [
       "Effective Communications",
       "Structured Communication",
@@ -283,7 +291,7 @@ export const speakingTopics = [
       "ERG Roadmap Effectiveness",
     ],
   },
-];
+] as const;
 
 export const caseStudies = [
   {
@@ -422,7 +430,7 @@ export const whoWeServeAudiences = [
       "Conference Experiences",
     ],
     cta: "Book a Speaking Engagement",
-    href: "/#speaking",
+    href: "/speaking",
   },
 ] satisfies WhoWeServeAudience[];
 
@@ -443,6 +451,295 @@ export const closingCtaContent = {
   secondaryLink: {
     label: "Learn More About Jennifer",
     href: "/founder",
+  },
+};
+
+export type WorkshopAgendaItem = {
+  time: string;
+  title: string;
+};
+
+export type WorkshopDeliverablePage =
+  | {
+      id: string;
+      tabLabel: string;
+      pageNumber: number;
+      variant: "cover";
+      title: string;
+      subtitle: string;
+      preparedFor: string;
+      sessionFormat: string;
+    }
+  | {
+      id: string;
+      tabLabel: string;
+      pageNumber: number;
+      variant: "overview";
+      sectionTitle: string;
+      introduction: string;
+      objectives: string[];
+      focusAreas: string[];
+    }
+  | {
+      id: string;
+      tabLabel: string;
+      pageNumber: number;
+      variant: "agenda";
+      sectionTitle: string;
+      introduction: string;
+      items: WorkshopAgendaItem[];
+    }
+  | {
+      id: string;
+      tabLabel: string;
+      pageNumber: number;
+      variant: "discussion";
+      sectionTitle: string;
+      introduction: string;
+      topics: { title: string; prompt: string }[];
+    }
+  | {
+      id: string;
+      tabLabel: string;
+      pageNumber: number;
+      variant: "action";
+      sectionTitle: string;
+      introduction: string;
+      framework: string[];
+      commitments: string[];
+    };
+
+export const leadershipExperiencesPath = "/leadership-experiences";
+
+export const featuredLeadershipExperienceTeaser = {
+  label: "Featured Leadership Experience",
+  title: "Marketing Leadership Offsite",
+  description:
+    "A sample of Jennifer's workshop design and facilitation approach — helping senior marketing leaders build inclusive cultures and translate dialogue into action.",
+  theme: "Inclusive Leadership · Talent Development · Workforce Belonging",
+  audience: "Senior Marketing Leaders",
+  format: "2-Hour Interactive Leadership Workshop",
+  cta: {
+    label: "View Full Leadership Experience",
+    href: leadershipExperiencesPath,
+  },
+  sampleCta: {
+    label: "Explore a Sample Leadership Experience",
+    href: leadershipExperiencesPath,
+  },
+};
+
+export const leadershipExperiencesContent = {
+  label: "Leadership Experiences",
+  title: "Facilitation and workshop design that drives lasting change.",
+  subheadline:
+    "Jennifer partners with organizations to design leadership experiences that strengthen culture, activate leaders, and translate dialogue into meaningful action.",
+  introduction:
+    "Every leadership experience is intentionally designed to create meaningful dialogue, inspire action, and drive lasting organizational impact.",
+  approach: {
+    label: "Design Philosophy",
+    title: "How Jennifer Designs Transformational Experiences",
+    description:
+      "A proven methodology for building sessions that engage executives, surface honest dialogue, and move teams toward accountable outcomes.",
+    pillars: [
+      {
+        title: "Strategic Workshop Design",
+        description:
+          "Every experience is tailored to your organization's goals, culture, and the leadership moments that matter most.",
+      },
+      {
+        title: "Leadership Development",
+        description:
+          "Programs that strengthen confidence, executive presence, and influence — for emerging and established leaders alike.",
+      },
+      {
+        title: "Facilitation Expertise",
+        description:
+          "Brave, inclusive spaces where dialogue is honest, thoughtful, and designed to unlock collective insight.",
+      },
+      {
+        title: "Action-Oriented Experiences",
+        description:
+          "Sessions structured to move leaders from awareness to clarity — with commitments they can carry forward.",
+      },
+      {
+        title: "Executive Engagement",
+        description:
+          "Formats that respect senior leaders' time while driving meaningful conversation and accountable outcomes.",
+      },
+    ],
+  },
+  sampleExperience: {
+    label: "In Practice",
+    title: "A recent leadership engagement.",
+    description:
+      "This marketing leadership offsite illustrates how Jennifer's design methodology comes to life — from session architecture to the facilitation materials that support it.",
+  },
+  featured: {
+    label: "Client Experience",
+    title: "Marketing Leadership Offsite",
+    theme:
+      "Inclusive Leadership · Talent Development · Workforce Belonging",
+    overview: {
+      label: "Experience Design",
+      title: "Shaped for senior marketing leaders.",
+      audience: "Senior Marketing Leaders",
+      format: "2-Hour Interactive Leadership Workshop",
+      focusAreas: [
+        "Inclusive Leadership",
+        "Talent Engagement",
+        "Workforce Belonging",
+        "Leadership Accountability",
+        "Inclusive Marketing",
+      ],
+    },
+    agenda: {
+      label: "Session Architecture",
+      title: "Intentionally structured from opening to close.",
+      items: [
+        { time: "2:00 PM", title: "Inclusive Leadership in Action" },
+        { time: "2:15 PM", title: "Inclusive Marketing and Design" },
+        { time: "3:00 PM", title: "Goal Setting and Action" },
+        { time: "3:10 PM", title: "Inclusive Talent Engagement" },
+        { time: "3:50 PM", title: "Closing Thoughts" },
+      ] satisfies WorkshopAgendaItem[],
+    },
+    discussionTopics: {
+      label: "Dialogue Framework",
+      title: "Themes that guide meaningful conversation.",
+      topics: [
+        "Psychological Safety",
+        "Career Mobility",
+        "Inclusive Hiring",
+        "Workforce Belonging",
+        "Leadership Accountability",
+        "Brand Representation",
+      ],
+    },
+  },
+  deliverable: {
+    label: "Design Proof Point",
+    title: "Curriculum and facilitation materials.",
+    description:
+      "Supporting proof of Jennifer's workshop design expertise — selected pages from the client-ready curriculum created for this engagement.",
+    confidentiality: "Confidential Sample · The Kaye Collective",
+    pages: [
+      {
+        id: "cover",
+        tabLabel: "Cover",
+        pageNumber: 1,
+        variant: "cover",
+        title: "Marketing Leadership Offsite",
+        subtitle: "Workshop Curriculum & Facilitation Guide",
+        preparedFor: "Senior Marketing Leaders",
+        sessionFormat: "2-Hour Interactive Leadership Workshop",
+      },
+      {
+        id: "overview",
+        tabLabel: "Overview",
+        pageNumber: 2,
+        variant: "overview",
+        sectionTitle: "Session Overview",
+        introduction:
+          "This workshop is designed to help senior marketing leaders strengthen inclusive leadership practices, deepen talent engagement, and build cultures of belonging that translate into brand impact.",
+        objectives: [
+          "Explore inclusive leadership in action across marketing organizations",
+          "Examine the connection between inclusive marketing and brand trust",
+          "Identify actionable steps for talent engagement and accountability",
+          "Align on shared commitments for post-session follow-through",
+        ],
+        focusAreas: [
+          "Inclusive Leadership",
+          "Talent Engagement",
+          "Workforce Belonging",
+          "Leadership Accountability",
+          "Inclusive Marketing",
+        ],
+      },
+      {
+        id: "agenda",
+        tabLabel: "Agenda",
+        pageNumber: 3,
+        variant: "agenda",
+        sectionTitle: "Session Flow",
+        introduction:
+          "A structured arc moving leaders from dialogue to clarity — with intentional transitions that keep energy high and outcomes tangible.",
+        items: [
+          { time: "2:00 PM", title: "Inclusive Leadership in Action" },
+          { time: "2:15 PM", title: "Inclusive Marketing and Design" },
+          { time: "3:00 PM", title: "Goal Setting and Action" },
+          { time: "3:10 PM", title: "Inclusive Talent Engagement" },
+          { time: "3:50 PM", title: "Closing Thoughts" },
+        ],
+      },
+      {
+        id: "discussion",
+        tabLabel: "Discussion Guide",
+        pageNumber: 4,
+        variant: "discussion",
+        sectionTitle: "Facilitation Framework",
+        introduction:
+          "Guided discussion prompts designed to create psychological safety, surface honest perspectives, and move the group toward shared understanding.",
+        topics: [
+          {
+            title: "Psychological Safety",
+            prompt:
+              "Where do our teams feel empowered to speak up — and where do we still have work to do?",
+          },
+          {
+            title: "Workforce Belonging",
+            prompt:
+              "What does belonging look like in our marketing organization today?",
+          },
+          {
+            title: "Brand Representation",
+            prompt:
+              "How do our external narratives reflect the diversity of the audiences we serve?",
+          },
+        ],
+      },
+      {
+        id: "action",
+        tabLabel: "Action Plan",
+        pageNumber: 5,
+        variant: "action",
+        sectionTitle: "Goal Setting & Commitments",
+        introduction:
+          "Leaders leave with clarity on what they will do differently — individually and as a collective — in the weeks following the session.",
+        framework: [
+          "What will I start, stop, or continue as a leader?",
+          "What support does my team need to sustain momentum?",
+          "What is one commitment I will make visible to others?",
+        ],
+        commitments: [
+          "Individual leadership action",
+          "Team alignment priority",
+          "Organizational follow-up milestone",
+        ],
+      },
+    ] satisfies WorkshopDeliverablePage[],
+  },
+  clientOutcomes: {
+    label: "Client Outcomes",
+    title: "What Clients Walk Away With",
+    outcomes: [
+      "Greater Leadership Confidence",
+      "Stronger Team Alignment",
+      "Clear Action Plans",
+      "Sustainable Organizational Change",
+    ],
+  },
+  closing: {
+    headline: "Ready to Create a Custom Leadership Experience?",
+    subheadline:
+      "Every organization is unique. Jennifer partners with leaders and teams to design experiences that create meaningful dialogue, inspire action, and drive lasting impact.",
+    primaryCta: {
+      label: "Schedule a Discovery Call",
+    },
+    secondaryCta: {
+      label: "Partner With Jennifer",
+      href: "/partner-with-us",
+    },
   },
 };
 

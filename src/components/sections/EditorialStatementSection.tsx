@@ -5,14 +5,14 @@ import { jenniferImages } from "@/lib/images";
 import { scrollSection } from "@/lib/motion";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { EditorialImage } from "@/components/ui/EditorialImage";
-import { siteContainerWide, sectionPaddingYAfterHero } from "@/lib/layout";
+import { siteContainerWide, sectionPaddingYAfterTransition } from "@/lib/layout";
 
 export function EditorialStatementSection() {
   return (
     <section
       aria-label="Editorial statement"
       id="manifesto"
-      className={`w-full overflow-hidden bg-cream ${sectionPaddingYAfterHero}`}
+      className={`w-full overflow-hidden bg-warm-ivory ${sectionPaddingYAfterTransition}`}
     >
       <div className={siteContainerWide}>
         <div className="grid items-center gap-6 lg:grid-cols-12 lg:gap-10">

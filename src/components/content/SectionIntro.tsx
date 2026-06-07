@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { BrandMonogram } from "@/components/ui/BrandMonogram";
 import { SectionHeading, SectionLabel } from "@/components/ui/SectionWrapper";
 
 type SectionIntroProps = {
@@ -7,6 +8,7 @@ type SectionIntroProps = {
   title: string;
   description?: string;
   centered?: boolean;
+  brandMark?: boolean;
   delay?: number;
   animated?: boolean;
   labelClassName?: string;
@@ -22,6 +24,7 @@ export function SectionIntro({
   title,
   description,
   centered = false,
+  brandMark = false,
   delay = 0,
   animated = true,
   labelClassName,
@@ -33,7 +36,21 @@ export function SectionIntro({
 }: SectionIntroProps) {
   const content = (
     <>
-      <SectionLabel className={labelClassName}>{label}</SectionLabel>
+      {brandMark ? (
+        <div
+          className={cn(
+            "mb-2 flex items-center gap-3",
+            centered && "justify-center",
+          )}
+        >
+          <BrandMonogram size="sm" opacity={15} />
+          <SectionLabel className={cn("mb-0", labelClassName)}>
+            {label}
+          </SectionLabel>
+        </div>
+      ) : (
+        <SectionLabel className={labelClassName}>{label}</SectionLabel>
+      )}
       <SectionHeading
         as={as}
         size={titleSize}

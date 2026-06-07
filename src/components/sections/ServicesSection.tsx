@@ -14,7 +14,7 @@ import { sectionBlockGap, sectionContentGap } from "@/lib/layout";
 
 export function ServicesSection() {
   return (
-    <SectionWrapper id="services" variant="cream">
+    <SectionWrapper id="services" variant="cream" afterTransition>
       <ScrollSection>
         <div className="max-w-2xl">
           <SectionLabel>{servicesContent.label}</SectionLabel>

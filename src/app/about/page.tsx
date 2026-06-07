@@ -3,7 +3,7 @@ import { aboutContent, siteConfig, valuePillars } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { AnimatedItem, AnimatedStagger } from "@/components/ui/AnimatedStagger";
-import { IconCard } from "@/components/ui/IconCard";
+import { ValuePillarCard } from "@/components/ui/ValuePillarCard";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionIntro } from "@/components/content/SectionIntro";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
@@ -40,10 +40,13 @@ export default function AboutPage() {
           </p>
         </AnimatedSection>
 
-        <AnimatedStagger className="mt-16 grid gap-6 md:grid-cols-3">
+        <AnimatedStagger className="mx-auto mt-16 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {valuePillars.map((pillar) => (
-            <AnimatedItem key={pillar.title}>
-              <IconCard title={pillar.title} description={pillar.description} />
+            <AnimatedItem key={pillar.title} className="h-full">
+              <ValuePillarCard
+                title={pillar.title}
+                description={pillar.description}
+              />
             </AnimatedItem>
           ))}
         </AnimatedStagger>

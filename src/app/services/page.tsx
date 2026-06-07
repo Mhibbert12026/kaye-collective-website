@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {
+  featuredLeadershipExperienceTeaser,
   individualServices,
   organizationServices,
   speakingTopics,
@@ -12,6 +13,7 @@ import { ServiceCard } from "@/components/ui/ServiceCard";
 import { TopicGroup } from "@/components/ui/TopicPill";
 import { SectionIntro } from "@/components/content/SectionIntro";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
+import { mobileCtaButton, mobileCtaGroup } from "@/lib/layout";
 import { stagger } from "@/lib/motion";
 import { calendlyUrl } from "@/lib/utils";
 
@@ -22,6 +24,8 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const { sampleCta } = featuredLeadershipExperienceTeaser;
+
   return (
     <>
       <PageHero
@@ -77,9 +81,16 @@ export default function ServicesPage() {
             </AnimatedItem>
           ))}
         </AnimatedStagger>
-        <AnimatedSection delay={stagger.section * 2} duration="slow" className="mt-12">
-          <Button href={calendlyUrl} external variant="gold">
+        <AnimatedSection
+          delay={stagger.section * 2}
+          duration="slow"
+          className={`${mobileCtaGroup} mt-12 justify-start`}
+        >
+          <Button href={calendlyUrl} external variant="gold" className={mobileCtaButton}>
             Book Jennifer to Speak
+          </Button>
+          <Button href={sampleCta.href} variant="ghost" className={mobileCtaButton}>
+            {sampleCta.label}
           </Button>
         </AnimatedSection>
       </SectionWrapper>

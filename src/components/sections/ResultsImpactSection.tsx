@@ -17,7 +17,7 @@ export function ResultsImpactSection() {
     resultsImpactContent;
 
   return (
-    <SectionWrapper id="results" variant="white">
+    <SectionWrapper id="results" variant="cream" afterTransition>
       <ScrollSection>
         <div className="max-w-3xl">
           <SectionLabel>{label}</SectionLabel>

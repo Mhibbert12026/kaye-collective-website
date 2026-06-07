@@ -1,4 +1,8 @@
 import { cn } from "@/lib/utils";
+import {
+  BrandMonogramCorner,
+  brandCardHoverClasses,
+} from "@/components/ui/BrandMonogram";
 import type { LeadershipImpactStat } from "@/lib/constants";
 
 type LeadershipImpactCardProps = {
@@ -12,10 +16,14 @@ export function LeadershipImpactCard({ stat, className }: LeadershipImpactCardPr
   return (
     <div
       className={cn(
-        "flex h-full flex-col justify-center rounded-2xl border border-warm-nude/50 bg-white px-6 py-7 shadow-[0_2px_16px_rgba(59,42,34,0.04)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-warm-nude/80 hover:shadow-[0_12px_36px_rgba(59,42,34,0.08)] sm:px-7 sm:py-8 lg:px-8 lg:py-10",
+        "relative flex h-full flex-col justify-center rounded-2xl border border-warm-nude/50 bg-white px-6 py-7 shadow-[0_2px_16px_rgba(59,42,34,0.04)] sm:px-7 sm:py-8 lg:px-8 lg:py-10",
+        brandCardHoverClasses,
+        "hover:border-warm-nude/80",
         className,
       )}
     >
+      <BrandMonogramCorner />
+
       <p
         className={cn(
           "font-serif leading-none tracking-tight text-chocolate",

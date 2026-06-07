@@ -1,9 +1,10 @@
 "use client";
 
-import { speakingContent } from "@/lib/constants";
+import { featuredLeadershipExperienceTeaser, speakingContent } from "@/lib/constants";
 import { jenniferImages } from "@/lib/images";
 import { TopicPill } from "@/components/ui/TopicPill";
 import { Button } from "@/components/ui/Button";
+import { TextLink } from "@/components/ui/TextLink";
 import { StoryBeat } from "@/components/ui/StoryBeat";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { AnimatedItem, AnimatedStagger } from "@/components/ui/AnimatedStagger";
@@ -13,8 +14,10 @@ import { mobileCtaButton, sectionBlockGap, sectionContentGap } from "@/lib/layou
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 
 export function SpeakingSection() {
+  const { sampleCta } = featuredLeadershipExperienceTeaser;
+
   return (
-    <SectionWrapper id="speaking" variant="white">
+    <SectionWrapper id="speaking" variant="warm-ivory" afterTransition>
       <StoryBeat
         role="Speaker"
         title={speakingContent.title}
@@ -40,11 +43,12 @@ export function SpeakingSection() {
         variant="scrollEnter"
         duration={scrollSection.duration}
         delay={0.1}
-        className={`${sectionBlockGap} flex justify-center px-1`}
+        className={`${sectionBlockGap} flex flex-col items-center gap-4 px-1 sm:gap-5`}
       >
         <Button href={calendlyUrl} external className={`${mobileCtaButton} max-w-md`}>
           Book Jennifer to Speak
         </Button>
+        <TextLink href={sampleCta.href}>{sampleCta.label} →</TextLink>
       </AnimatedSection>
     </SectionWrapper>
   );

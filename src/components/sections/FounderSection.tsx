@@ -18,7 +18,7 @@ import {
 
 export function FounderSection() {
   return (
-    <SectionWrapper id="founder" variant="warm-nude">
+    <SectionWrapper id="founder" variant="soft-beige" afterTransition>
       <div className="mx-auto grid min-w-0 max-w-6xl items-center gap-6 lg:grid-cols-2 lg:gap-10">
         <AnimatedSection
           variant="scrollEnter"

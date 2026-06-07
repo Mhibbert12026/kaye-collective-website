@@ -35,6 +35,10 @@ export const bodyTextLarge =
 export const closingCtaPaddingY =
   "pt-16 pb-14 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24";
 
+/** Sections that follow a transition bridge — slightly tighter top inset */
+export const sectionPaddingYAfterTransition =
+  "pt-10 pb-12 md:pt-16 md:pb-14 lg:pt-20 lg:pb-16";
+
 /** Brand surface treatment — shared by footer and closing CTA */
 export const brandSurfaceGradient =
   "bg-[radial-gradient(ellipse_at_20%_0%,_rgba(184,155,114,0.12)_0%,_transparent_55%),radial-gradient(ellipse_at_80%_100%,_rgba(90,48,69,0.18)_0%,_transparent_50%)]";

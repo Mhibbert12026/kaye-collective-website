@@ -11,7 +11,7 @@ export function ClientSuccessHighlightsSection() {
   const { headline, cards } = clientSuccessHighlightsContent;
 
   return (
-    <SectionWrapper id="success-highlights" variant="cream">
+    <SectionWrapper id="success-highlights" variant="warm-ivory" afterTransition>
       <ScrollSection>
         <div className="max-w-3xl">
           <SectionHeading as="h2" size="default" accent={false}>

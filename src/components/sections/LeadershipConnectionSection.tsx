@@ -6,7 +6,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { EditorialImage } from "@/components/ui/EditorialImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TextLink } from "@/components/ui/TextLink";
-import { siteContainerWide, sectionPaddingY } from "@/lib/layout";
+import { siteContainerWide, sectionPaddingYAfterTransition } from "@/lib/layout";
 import { scrollSection } from "@/lib/motion";
 
 export function LeadershipConnectionSection() {
@@ -15,7 +15,7 @@ export function LeadershipConnectionSection() {
   return (
     <section
       aria-labelledby="leadership-connection-heading"
-      className={`w-full overflow-hidden bg-warm-nude/20 ${sectionPaddingY}`}
+      className={`w-full overflow-hidden bg-soft-beige ${sectionPaddingYAfterTransition}`}
     >
       <div className={siteContainerWide}>
         <div className="grid items-center gap-6 lg:grid-cols-12 lg:gap-10">
