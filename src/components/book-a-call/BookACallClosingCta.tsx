@@ -1,6 +1,6 @@
 "use client";
 
-import { closingCtaContent } from "@/lib/constants";
+import { bookACallContent } from "@/lib/constants";
 import { scrollSection } from "@/lib/motion";
 import {
   brandSurfaceGradient,
@@ -11,15 +11,13 @@ import {
 } from "@/lib/layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
-import { TextLink } from "@/components/ui/TextLink";
 
-export function ContactSection() {
-  const { headline, subheadline, cta, secondaryLink } = closingCtaContent;
+export function BookACallClosingCta() {
+  const { headline, subheadline, cta } = bookACallContent.closing;
 
   return (
     <section
-      id="contact"
-      aria-labelledby="closing-cta-heading"
+      aria-labelledby="book-a-call-closing-heading"
       className="relative overflow-hidden bg-chocolate text-cream"
     >
       <div
@@ -43,7 +41,7 @@ export function ContactSection() {
           />
 
           <h2
-            id="closing-cta-heading"
+            id="book-a-call-closing-heading"
             className="font-serif text-balance text-[1.75rem] leading-[1.12] tracking-tight text-cream sm:text-[2.25rem] sm:leading-[1.1] md:text-[2.75rem] md:leading-[1.08] lg:text-[4.25rem] lg:leading-[1.06]"
           >
             {headline}
@@ -53,21 +51,15 @@ export function ContactSection() {
             {subheadline}
           </p>
 
-          <div className="mt-8 flex flex-col items-center gap-5 sm:mt-10 sm:flex-row sm:justify-center sm:gap-8 lg:mt-12">
+          <div className="mt-8 sm:mt-10 lg:mt-12">
             <Button
-              href={cta.href}
+              href="#booking"
               variant="gold"
               ariaLabel={cta.ariaLabel}
-              className={`${mobileCtaButton} min-w-[17rem] whitespace-nowrap`}
+              className={`${mobileCtaButton} min-w-[18rem] whitespace-nowrap`}
             >
               {cta.label}
             </Button>
-            <TextLink
-              href={secondaryLink.href}
-              className="text-warm-nude hover:text-cream"
-            >
-              {secondaryLink.label} →
-            </TextLink>
           </div>
         </AnimatedSection>
       </div>

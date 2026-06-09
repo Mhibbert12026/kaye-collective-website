@@ -14,6 +14,7 @@ export { Badge } from "./Badge";
 export { Breadcrumb } from "./Breadcrumb";
 export { Button } from "./Button";
 export { SchedulingCard } from "./SchedulingCard";
+export { CalendlyEmbed } from "./CalendlyEmbed";
 export { CaseStudyCard } from "./CaseStudyCard";
 export { CollectiveMemberCard } from "./CollectiveMemberCard";
 export { ContactForm } from "./ContactForm";

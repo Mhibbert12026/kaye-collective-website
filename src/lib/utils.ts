@@ -6,4 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const calendlyUrl =
-  process.env.NEXT_PUBLIC_CALENDLY_URL ?? "https://calendly.com";
+  process.env.NEXT_PUBLIC_CALENDLY_URL ??
+  "https://calendly.com/thekayecollective/https-calendly-com-jennhuggins-discovery-call";

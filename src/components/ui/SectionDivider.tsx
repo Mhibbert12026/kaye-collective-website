@@ -25,6 +25,7 @@ type SectionFade =
   | "warm-nude-white"
   | "white-chocolate"
   | "warm-ivory-chocolate"
+  | "soft-beige-chocolate"
   | "chocolate-aubergine"
   | "aubergine-cream";
 
@@ -62,6 +63,7 @@ const fadeClasses: Record<SectionFade, string> = {
   "warm-nude-white": "bg-gradient-to-b from-warm-nude/20 to-white",
   "white-chocolate": "bg-gradient-to-b from-white to-chocolate",
   "warm-ivory-chocolate": "bg-gradient-to-b from-warm-ivory to-chocolate",
+  "soft-beige-chocolate": "bg-gradient-to-b from-soft-beige to-chocolate",
   "chocolate-aubergine": "bg-gradient-to-b from-chocolate to-aubergine",
   "aubergine-cream": "bg-gradient-to-b from-aubergine to-cream",
 };

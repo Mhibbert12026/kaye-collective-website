@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/lib/constants";
 import { parseHashHref, scrollToSection } from "@/lib/navigation";
-import { calendlyUrl } from "@/lib/utils";
+import { closingCtaContent } from "@/lib/constants";
 import styles from "./Navbar.module.css";
 
 type NavbarLinkProps = {
@@ -109,14 +109,13 @@ export function Navbar() {
         </nav>
 
         <div className={styles.actions}>
-          <a
-            href={calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={closingCtaContent.cta.href}
+            aria-label={closingCtaContent.cta.ariaLabel}
             className={styles.cta}
           >
-            Schedule a Call
-          </a>
+            {closingCtaContent.cta.label}
+          </Link>
 
           <div className={styles.menuWrap}>
             <button
@@ -147,14 +146,14 @@ export function Navbar() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href={calendlyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={closingCtaContent.cta.href}
+                  aria-label={closingCtaContent.cta.ariaLabel}
                   className={styles.mobileCta}
+                  onClick={() => setMenuOpen(false)}
                 >
-                  Schedule a Call
-                </a>
+                  {closingCtaContent.cta.label}
+                </Link>
               </div>
             ) : null}
           </div>

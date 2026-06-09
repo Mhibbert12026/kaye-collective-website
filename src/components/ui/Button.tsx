@@ -9,6 +9,7 @@ type ButtonProps = {
   onClick?: () => void;
   type?: "button" | "submit";
   external?: boolean;
+  ariaLabel?: string;
 };
 
 const variants = {
@@ -28,9 +29,10 @@ export function Button({
   onClick,
   type = "button",
   external,
+  ariaLabel,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex h-14 items-center justify-center rounded-full px-8 text-base font-medium tracking-wide transition-colors duration-300",
+    "inline-flex h-14 items-center justify-center whitespace-nowrap rounded-full px-8 text-base font-medium tracking-wide transition-colors duration-300",
     variants[variant],
     className,
   );
@@ -42,6 +44,7 @@ export function Button({
           href={href}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={ariaLabel}
           className={classes}
         >
           {children}

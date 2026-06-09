@@ -441,13 +441,70 @@ export const partnerContent = {
     "Coaching and advisory built on clarity, courage, and lasting change.",
 };
 
+export const bookACallPath = "/book-a-call";
+
+export const discoveryConversationCta = {
+  label: "Book a Discovery Conversation",
+  ariaLabel: "Book a Leadership Discovery Conversation",
+  href: bookACallPath,
+} as const;
+
+export const bookACallContent = {
+  label: "Book a Discovery Conversation",
+  hero: {
+    headline: "Leadership Starts With a Conversation.",
+    subheadline:
+      "Meaningful transformation begins with clarity. This complimentary discovery conversation provides an opportunity to discuss your goals, leadership challenges, and the support needed to create lasting impact for yourself, your team, and your organization.",
+    callout: "Complimentary 30-Minute Leadership Discovery Conversation",
+    trustIndicators: [
+      "20+ Years Leadership Experience",
+      "Fortune 500 Experience",
+      "National Speaker & Facilitator",
+    ],
+  },
+  booking: {
+    label: "Your Conversation",
+    title: "Select a time that works for you.",
+    description:
+      "Choose an available slot below for a complimentary, confidential discovery conversation with Jennifer Huggins.",
+  },
+  whatToExpect: {
+    label: "What To Expect",
+    title: "A thoughtful conversation designed around your goals.",
+    items: [
+      {
+        title: "Discovery & Goals",
+        description:
+          "Explore your current priorities, opportunities, and desired outcomes.",
+      },
+      {
+        title: "Leadership Challenges",
+        description:
+          "Discuss leadership, organizational, career, or team-related challenges you may be navigating.",
+      },
+      {
+        title: "Recommended Next Steps",
+        description:
+          "Identify potential strategies, solutions, and partnership opportunities aligned to your goals.",
+      },
+    ],
+  },
+  closing: {
+    headline: "Ready to Take the Next Step?",
+    subheadline:
+      "Every meaningful transformation begins with a conversation. Let's explore what's possible together.",
+    cta: {
+      label: "Book Your Discovery Conversation",
+      ariaLabel: "Book your leadership discovery conversation",
+    },
+  },
+};
+
 export const closingCtaContent = {
   headline: "Ready to Lead Differently?",
   subheadline:
     "Whether you're navigating a career transition, developing your leadership team, or planning a transformational event, Jennifer is ready to partner with you.",
-  cta: {
-    label: "Schedule a Call",
-  },
+  cta: discoveryConversationCta,
   secondaryLink: {
     label: "Learn More About Jennifer",
     href: "/founder",
