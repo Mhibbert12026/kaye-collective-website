@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { founderBio, siteConfig } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { SocialLinksRow } from "@/components/ui/SocialLinks";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { AnimatedItem, AnimatedStagger } from "@/components/ui/AnimatedStagger";
 import {
@@ -67,6 +68,13 @@ export default function FounderPage() {
             <p className="mt-8 text-base text-mocha lg:text-lg">
               Based in {siteConfig.location}
             </p>
+
+            <div className="mt-6">
+              <p className="mb-3 text-sm font-medium tracking-[0.2em] text-mocha/80 uppercase">
+                Connect
+              </p>
+              <SocialLinksRow variant="light" />
+            </div>
 
             <Button href="/partner-with-us" className="mt-8">
               Work With Jennifer

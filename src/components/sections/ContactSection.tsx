@@ -11,6 +11,7 @@ import {
 } from "@/lib/layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
+import { SocialLinksRow } from "@/components/ui/SocialLinks";
 import { TextLink } from "@/components/ui/TextLink";
 
 export function ContactSection() {
@@ -69,6 +70,8 @@ export function ContactSection() {
               {secondaryLink.label} →
             </TextLink>
           </div>
+
+          <SocialLinksRow variant="dark" centered className="mt-10 lg:mt-12" />
         </AnimatedSection>
       </div>
     </section>

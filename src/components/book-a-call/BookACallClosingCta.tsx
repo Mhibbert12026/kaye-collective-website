@@ -11,6 +11,7 @@ import {
 } from "@/lib/layout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { Button } from "@/components/ui/Button";
+import { SocialLinksRow } from "@/components/ui/SocialLinks";
 
 export function BookACallClosingCta() {
   const { headline, subheadline, cta } = bookACallContent.closing;
@@ -61,6 +62,8 @@ export function BookACallClosingCta() {
               {cta.label}
             </Button>
           </div>
+
+          <SocialLinksRow variant="dark" centered className="mt-10 lg:mt-12" />
         </AnimatedSection>
       </div>
     </section>

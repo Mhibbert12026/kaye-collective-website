@@ -135,8 +135,9 @@ export function SiteFooter() {
                     {footerContent.social.map((item) => (
                       <SocialLink
                         key={item.label}
-                        label={item.label as "LinkedIn" | "Instagram"}
+                        label={item.label}
                         href={item.href}
+                        ariaLabel={item.ariaLabel}
                       />
                     ))}
                   </div>

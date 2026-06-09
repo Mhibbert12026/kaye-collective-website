@@ -1,3 +1,6 @@
+import { socialLinks } from "@/lib/constants";
+import { cn } from "@/lib/utils";
+
 function LinkedInIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -41,13 +44,33 @@ const socialIconMap = {
   Instagram: InstagramIcon,
 } as const;
 
+type SocialPlatform = keyof typeof socialIconMap;
+type SocialLinkVariant = "dark" | "light";
+
+const variantClasses: Record<SocialLinkVariant, string> = {
+  dark: "border-cream/15 bg-cream/5 text-warm-nude hover:border-soft-gold/60 hover:bg-soft-gold/15 hover:text-soft-gold",
+  light:
+    "border-warm-nude/60 bg-white/80 text-mocha shadow-[0_2px_10px_rgba(59,42,34,0.04)] hover:border-soft-gold/55 hover:bg-soft-gold/10 hover:text-aubergine",
+};
+
+const hoverTransition =
+  "transition-[color,background-color,border-color,transform] duration-[250ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105";
+
+type SocialLinkProps = {
+  label: SocialPlatform;
+  href: string;
+  ariaLabel: string;
+  variant?: SocialLinkVariant;
+  className?: string;
+};
+
 function SocialLink({
   label,
   href,
-}: {
-  label: keyof typeof socialIconMap;
-  href: string;
-}) {
+  ariaLabel,
+  variant = "dark",
+  className,
+}: SocialLinkProps) {
   const Icon = socialIconMap[label];
 
   return (
@@ -55,12 +78,49 @@ function SocialLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={label}
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-cream/15 bg-cream/5 text-warm-nude transition-[color,background-color,border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-soft-gold/50 hover:bg-soft-gold/10 hover:text-cream"
+      aria-label={ariaLabel}
+      className={cn(
+        "flex h-11 w-11 items-center justify-center rounded-full border",
+        hoverTransition,
+        variantClasses[variant],
+        className,
+      )}
     >
       <Icon className="h-[18px] w-[18px]" />
     </a>
   );
 }
 
-export { SocialLink };
+type SocialLinksRowProps = {
+  variant?: SocialLinkVariant;
+  className?: string;
+  centered?: boolean;
+};
+
+function SocialLinksRow({
+  variant = "dark",
+  className,
+  centered = false,
+}: SocialLinksRowProps) {
+  return (
+    <div
+      className={cn(
+        "flex flex-wrap gap-3",
+        centered && "justify-center",
+        className,
+      )}
+    >
+      {socialLinks.map((item) => (
+        <SocialLink
+          key={item.label}
+          label={item.label}
+          href={item.href}
+          ariaLabel={item.ariaLabel}
+          variant={variant}
+        />
+      ))}
+    </div>
+  );
+}
+
+export { SocialLink, SocialLinksRow };

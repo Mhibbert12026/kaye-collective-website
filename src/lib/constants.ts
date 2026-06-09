@@ -909,17 +909,21 @@ export const testimonials: {
 
 export const leadershipQuote = manifestoContent.quote;
 
+export const socialLinks = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/jkayehuggins/",
+    ariaLabel: "Visit Jennifer Huggins on LinkedIn",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/leadinspired?utm_source=qr",
+    ariaLabel: "Visit Jennifer Huggins on Instagram",
+  },
+] as const;
+
 export const footerContent = {
   founderStatement:
     "I founded The Kaye Collective on a simple belief: no one transforms alone. My work is to walk alongside leaders — with clarity, courage, and a commitment to transformation that endures.",
-  social: [
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com",
-    },
-    {
-      label: "Instagram",
-      href: "https://www.instagram.com",
-    },
-  ],
+  social: socialLinks,
 };
